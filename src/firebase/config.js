@@ -2,12 +2,12 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAGAI2yUtjX4mFcJD0QyaRKSa0X-MkIRA0",
-  authDomain: "cookery-site.firebaseapp.com",
-  projectId: "cookery-site",
-  storageBucket: "cookery-site.appspot.com",
-  messagingSenderId: "7135932334",
-  appId: "1:7135932334:web:0c4883ac552f35edcf623f"
+  apiKey: "AIzaSyBGXjltWLrUTnH5QUaAmsQ1gTo9O5LIHMo",
+  authDomain: "sutd-confessions.firebaseapp.com",
+  projectId: "sutd-confessions",
+  storageBucket: "sutd-confessions.appspot.com",
+  messagingSenderId: "71923380135",
+  appId: "1:71923380135:web:d08ea1cbcb16ac1adcd082"
 };
 
 // Initialize Firebase

@@ -1,0 +1,52 @@
+.confession-list {
+    display: grid;
+    grid-gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+  .confession-list .card {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .confession-list .card h3 {
+    color: #555;
+    margin-bottom: 6px;
+  }
+  .confession-list .card p {
+    color: #999;
+    font-size: 0.9em;
+  }
+  .confession-list .card div {
+    color: #555;
+    font-size: 0.7em;
+    margin: 20px 0;
+    line-height: 1.5em;
+  }
+  .confession-list .card a {
+    color: #555;
+    text-decoration: none;
+    display: block;
+    background: #e2e2e2;
+    font-size: 0.9em;
+    width: 100px;
+    text-align: center;
+    width: 120px;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 20px auto 0;
+  }
+  
+  /* dark mode */
+  .confession-list .card.dark {
+    background: #555;
+  }
+  .confession-list .card.dark p,
+  .confession-list .card.dark h3,
+  .confession-list .card.dark div {
+    color: #e4e4e4;
+  }
