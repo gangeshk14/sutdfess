@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 export default function SearchBar(props) {
   // Add state for the search query
   const [searchQuery, setSearchQuery] = useState('');
+  const { data } = props;
 
   /* Called whenever the value of an input changes
   * Whenever user types smth in the input field,
