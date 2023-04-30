@@ -1,7 +1,7 @@
 
 import { BrowserRouter,Route, Routes} from 'react-router-dom';
 import './App.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Confess from './pages/confess/Confess';
 import Confessions from './pages/confessions/Confessions';
 import Navbar from './components/Navbar';
