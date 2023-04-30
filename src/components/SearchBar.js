@@ -5,14 +5,14 @@ export default function SearchBar(props) {
   // Add state for the search query
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Called whenever the value of an input changes
-  // Whenever user types smth in the input field,
-  // the handleInputChange function will be called with an event
-  // object containing info about the change
+  /* Called whenever the value of an input changes
+  * Whenever user types smth in the input field,
+  * the handleInputChange function will be called with an event
+  * object containing info about the change */
   function handleInputChange(event) {
     setSearchQuery(event.target.value);
   }
-
+  
   // Filter the data and store it in a filteredData array
   const filteredData = props.data.filter(item => item.name.includes(searchQuery));
 
