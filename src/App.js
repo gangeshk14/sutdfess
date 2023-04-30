@@ -17,7 +17,7 @@ function App() {
     <div className= {`App ${mode}`}>
      <BrowserRouter>
       <Navbar/>
-      <SearchBar/>
+      <SearchBar data={data}/>
       <ThemeSelector/>
        <Routes>
           <Route path = "/" element = {<Confessions/>} />
