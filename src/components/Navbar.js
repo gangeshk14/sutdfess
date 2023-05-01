@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import { useTheme } from '../hooks/useTheme'
+import SearchBar from './SearchBar'
 
 export default function Navbar() {
 
@@ -18,6 +19,7 @@ export default function Navbar() {
             <button className = "button2">
                 See All
             </button> */}
+            <SearchBar data={data} onChange={onSearch} />
             <Link to = "/submit">Submit Confession</Link>
         </nav>
     </div>
