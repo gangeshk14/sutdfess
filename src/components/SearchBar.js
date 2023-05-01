@@ -8,7 +8,7 @@ export default function SearchBar(props) {
 
   // Add state for the search query
   const [searchQuery, setSearchQuery] = useState(props.searchQuery);
-  // const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   // const { data } = props;
 
   // Watch for changes in the props.data and update the filderedData state accordingly
