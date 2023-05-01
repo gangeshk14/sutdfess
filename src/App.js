@@ -32,19 +32,19 @@ function App() {
   }, []);
 
   // Filter the data based on the search query
-  const filteredData = data.filter((item) => item.title.includes(searchQuery))
+  // const filteredData = data.filter((item) => item.title.includes(searchQuery))
 
   return (
     <div className= {`App ${mode}`}>
      <BrowserRouter>
       <Navbar/>
-      {/* <SearchBar data={data} onChange={handleSearch}/> */}
       <ThemeSelector/>
        <Routes>
           <Route path = "/" element = {<Confessions/>} />
           <Route path = "/submit" element = {<Confess/>} />
           <Route path = "/admin" element = {<Admin/>} />
        </Routes>
+       <SearchBar data={data} onChange={handleSearch} searchQuery={searchQuery} />
       </BrowserRouter>
     </div>
   );

@@ -7,7 +7,7 @@ export default function SearchBar(props) {
   // console.log('data prop:', props.data);
 
   // Add state for the search query
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(props.searchQuery);
   // const { data } = props;
 
   // Handle the search input changes
@@ -18,7 +18,7 @@ export default function SearchBar(props) {
   }
   
   // Filter the data and store it in a filteredData array
-  // const filteredData = props.data.filter(item => item.title.includes(searchQuery));
+  const filteredData = props.data.filter(item => item.title.includes(searchQuery));
 
   // Return the UI for the SearchBar
   return (
@@ -30,7 +30,7 @@ export default function SearchBar(props) {
         * key attribute is set to the item's id property
         * name property is displayed as the text content
         * */}
-        {props.data && props.data.filter(item => item.title.includes(searchQuery)).map(item => (
+        {filteredData.map((item) => (
           <li key={item.id}>{item.content}</li>
         ))}
       </ul>
