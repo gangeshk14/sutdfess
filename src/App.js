@@ -15,10 +15,12 @@ import { db } from './firebase/config';
 function App() {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
   const{mode} = useTheme();
   // Filder data based on search input and update the state
   const handleSearch = (query) => {
     setSearchQuery(query);
+    setFilteredData(data.filter((item) => item.title.includes(query)));
   };
 
   useEffect(() => {
