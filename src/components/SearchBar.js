@@ -20,6 +20,8 @@ export default function SearchBar(props) {
   // Filter the data and store it in a filteredData array
   const filteredData = props.data?.filter(item => item.title.includes(searchQuery));
 
+  if (!filteredData) return null;
+
   // Return the UI for the SearchBar
   return (
     <div>
