@@ -10,10 +10,7 @@ export default function SearchBar(props) {
   const [searchQuery, setSearchQuery] = useState('');
   const { data } = props;
 
-  /* Called whenever the value of an input changes
-  * Whenever user types smth in the input field,
-  * the handleInputChange function will be called with an event
-  * object containing info about the change */
+  // Handle the search input changes
   function handleInputChange(event) {
     setSearchQuery(event.target.value);
     // Call the onChange handler with the new value
@@ -34,7 +31,7 @@ export default function SearchBar(props) {
         * name property is displayed as the text content
         * */}
         {filteredData.map(item => (
-          <li key={item.id}>{item.name}</li>
+          <li key={item.id}>{item.content}</li>
         ))}
       </ul>
     </div>

@@ -15,6 +15,10 @@ import { db } from './firebase/config';
 function App() {
   const [data, setData] = useState([])
   const{mode} = useTheme()
+  // Filder data based on search input and update the state
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
 
   useEffect(() => {
     const ref = collection(db, 'displayed');
@@ -30,7 +34,7 @@ function App() {
     <div className= {`App ${mode}`}>
      <BrowserRouter>
       <Navbar/>
-      <SearchBar data={data} onChange={handleInputChange}/>
+      <SearchBar data={data} onChange={handleSearch}/>
       <ThemeSelector/>
        <Routes>
           <Route path = "/" element = {<Confessions/>} />
