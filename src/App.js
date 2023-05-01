@@ -15,7 +15,7 @@ import { db } from './firebase/config';
 function App() {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
+  // const [filteredData, setFilteredData] = useState([]);
   const{mode} = useTheme();
   // Filder data based on search input and update the state
   const handleSearch = (query) => {
@@ -56,7 +56,12 @@ function App() {
           <Route path = "/submit" element = {<Confess/>} />
           <Route path = "/admin" element = {<Admin/>} />
        </Routes>
-       <SearchBar data={filteredData} onChange={handleSearch} searchQuery={searchQuery} />
+       <SearchBar data={Data} onChange={handleSearch} searchQuery={searchQuery} />
+       <ul>
+          {filteredData.map((item) => (
+            <li key={item.id}>{item.content}</li>
+          ))}
+        </ul>
       </BrowserRouter>
     </div>
   );

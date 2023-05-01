@@ -8,6 +8,7 @@ export default function SearchBar(props) {
 
   // Add state for the search query
   const [searchQuery, setSearchQuery] = useState(props.searchQuery);
+  const [filteredData, setFilteredData] = useState([]);
   // const { data } = props;
 
   // Watch for changes in the props.data and update the filderedData state accordingly
@@ -24,7 +25,7 @@ export default function SearchBar(props) {
   }
   
   // Filter the data and store it in a filteredData array
-  const filteredData = props.data?.filter(item => item.title.includes(searchQuery));
+  // const filteredData = props.data?.filter(item => item.title.includes(searchQuery));
 
   if (!filteredData) {
     return (
