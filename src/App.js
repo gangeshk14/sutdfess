@@ -38,7 +38,7 @@ function App() {
     <div className= {`App ${mode}`}>
      <BrowserRouter>
       <Navbar/>
-      <SearchBar data={data} onChange={handleSearch}/>
+      {/* <SearchBar data={data} onChange={handleSearch}/> */}
       <ThemeSelector/>
        <Routes>
           <Route path = "/" element = {<Confessions/>} />
