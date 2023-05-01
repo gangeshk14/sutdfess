@@ -19,7 +19,7 @@ export default function Navbar() {
             <button className = "button2">
                 See All
             </button> */}
-            <SearchBar data={data} onChange={onSearch} />
+            <SearchBar data={props.data} onChange={props.onSearch} />
             <Link to = "/submit">Submit Confession</Link>
         </nav>
     </div>
