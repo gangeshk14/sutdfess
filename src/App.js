@@ -34,6 +34,8 @@ function App() {
   // Filter the data based on the search query
   // const filteredData = data.filter((item) => item.title.includes(searchQuery))
 
+  if (!data) return null;
+
   return (
     <div className= {`App ${mode}`}>
      <BrowserRouter>
