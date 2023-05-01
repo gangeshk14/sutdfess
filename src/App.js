@@ -13,8 +13,9 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from './firebase/config';
 
 function App() {
-  const [data, setData] = useState([])
-  const{mode} = useTheme()
+  const [data, setData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const{mode} = useTheme();
   // Filder data based on search input and update the state
   const handleSearch = (query) => {
     setSearchQuery(query);
