@@ -27,7 +27,7 @@ export default function SearchBar(props) {
   // Filter the data and store it in a filteredData array
   // const filteredData = props.data?.filter(item => item.title.includes(searchQuery));
 
-  if (!filteredData) {
+  if (!props.filteredData) {
     return (
       <div>
         <input type="text" placeholder="Search" value={searchQuery} onChange={handleInputChange} />
