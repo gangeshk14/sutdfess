@@ -20,8 +20,16 @@ function App() {
   // Filder data based on search input and update the state
   const handleSearch = (query) => {
     setSearchQuery(query);
-    setFilteredData(data.filter((item) => item.title.includes(query)));
+    // setFilteredData(data.filter((item) => item.title.includes(query)));
   };
+
+  // Watch for changes in the searchQuery state and update the filteredData state accordingly
+  useEffect(() => {
+    const filtered = data.filter((item) =>
+      item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredData(filtered);
+  }, [data, searchQuery]);
 
   useEffect(() => {
     const ref = collection(db, 'displayed');
@@ -48,7 +56,7 @@ function App() {
           <Route path = "/submit" element = {<Confess/>} />
           <Route path = "/admin" element = {<Admin/>} />
        </Routes>
-       <SearchBar data={data} onChange={handleSearch} searchQuery={searchQuery} />
+       <SearchBar data={filteredData} onChange={handleSearch} searchQuery={searchQuery} />
       </BrowserRouter>
     </div>
   );
