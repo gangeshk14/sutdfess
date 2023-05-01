@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 // Create a SearchBar component
 export default function SearchBar(props) {
+  // Check if SearchBar is being rendered and if the data prop is passes correctly
+  console.log('Rendering SearchBar component');
+  console.log('data prop:', props.data);
+
   // Add state for the search query
   const [searchQuery, setSearchQuery] = useState('');
   const { data } = props;
