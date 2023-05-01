@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 // Create a SearchBar component
 export default function SearchBar(props) {
   // Check if SearchBar is being rendered and if the data prop is passes correctly
-  console.log('Rendering SearchBar component');
-  console.log('data prop:', props.data);
+  // console.log('Rendering SearchBar component');
+  // console.log('data prop:', props.data);
 
   // Add state for the search query
   const [searchQuery, setSearchQuery] = useState('');
@@ -16,6 +16,8 @@ export default function SearchBar(props) {
   * object containing info about the change */
   function handleInputChange(event) {
     setSearchQuery(event.target.value);
+    // Call the onChange handler with the new value
+    props.onChange(event.target.value);
   }
   
   // Filter the data and store it in a filteredData array
