@@ -8,14 +8,14 @@ export default function SearchBar(props) {
 
   // Add state for the search query
   const [searchQuery, setSearchQuery] = useState(props.searchQuery);
-  const [filteredData, setFilteredData] = useState([]);
+  // const [filteredData, setFilteredData] = useState([]);
   // const { data } = props;
 
   // Watch for changes in the props.data and update the filderedData state accordingly
   useEffect(() => {
     const filtered = props.data?.filter(item => item.title.includes(searchQuery));
     setFilteredData(filtered || []);
-  }, [props.data, searchQuery]);
+  }, [props.data, searchQuery, props.setFilteredData]);
 
   // Handle the search input changes
   function handleInputChange(event) {
@@ -48,7 +48,7 @@ export default function SearchBar(props) {
         * key attribute is set to the item's id property
         * name property is displayed as the text content
         * */}
-        {filteredData.map((item) => (
+        {props.filteredData.map((item) => (
           <li key={item.id}>{item.content}</li>
         ))}
       </ul>
