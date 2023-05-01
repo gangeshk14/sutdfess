@@ -10,6 +10,12 @@ export default function SearchBar(props) {
   const [searchQuery, setSearchQuery] = useState(props.searchQuery);
   // const { data } = props;
 
+  // Watch for changes in the props.data and update the filderedData state accordingly
+  useEffect(() => {
+    const filtered = props.data?.filter(item => item.title.includes(searchQuery));
+    setFilteredData(filtered || []);
+  }, [props.data, searchQuery]);
+
   // Handle the search input changes
   function handleInputChange(event) {
     setSearchQuery(event.target.value);
@@ -30,7 +36,7 @@ export default function SearchBar(props) {
       </div>
     );
   }
-  
+
   // Return the UI for the SearchBar
   return (
     <div>
