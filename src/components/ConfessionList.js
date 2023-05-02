@@ -11,7 +11,9 @@ export default function ConfessionList({confessions}) {
   const [searchQuery, setSearchQuery] = useState('')
 
   const filteredConfessions = confessions.filter(confession => {
-    return confession.title.toLowerCase().includes(searchQuery.toLowerCase())
+    return confession.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    confession.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    confession.type.toLowerCase().includes(searchQuery.toLowerCase())
   })
 
   if (confessions.length === 0){
