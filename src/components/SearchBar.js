@@ -2,14 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 // Create a SearchBar component
 export default function SearchBar(props) {
-  // Check if SearchBar is being rendered and if the data prop is passes correctly
-  // console.log('Rendering SearchBar component');
-  // console.log('data prop:', props.data);
 
-  // Add state for the search query
+  // searchQuery holds user's input in search bar
   const [searchQuery, setSearchQuery] = useState('');
+  // filteredData holds data that matches user's search query
   const [filteredData, setFilteredData] = useState([]);
-  // const { data } = props;
 
   // Watch for changes in the props.data and update the filderedData state accordingly
   useEffect(() => {
@@ -21,7 +18,7 @@ export default function SearchBar(props) {
     setSearchQuery(props.searchQuery || '');
   }, [props.searchQuery]);
 
-  // Handle the search input changes
+  // Called whenever user types into search bar
   function handleInputChange(event) {
     setSearchQuery(event.target.value);
     // Call the onChange handler with the new value if it is defined
@@ -30,30 +27,10 @@ export default function SearchBar(props) {
     }
   }
   
-  // Filter the data and store it in a filteredData array
-  // const filteredData = props.data?.filter(item => item.title.includes(searchQuery));
-
-  if (!filteredData.length) {
-    return (
-      <div>
-        <input type="text" placeholder="Search" value={searchQuery} onChange={handleInputChange} />
-        <ul>
-          <li>No results found.</li>
-        </ul>
-      </div>
-    );
-  }
-
-  // Return the UI for the SearchBar
   return (
-    <div>
+    <div className="SearchBar">
       <input type="text" placeholder="Search" value={searchQuery} onChange={handleInputChange} />
       <ul>
-        {/* 
-        * Each item in array is mapped to a list item 
-        * key attribute is set to the item's id property
-        * name property is displayed as the text content
-        * */}
         {filteredData.map((item) => (
           <li key={item.id}>{item.content}</li>
         ))}
